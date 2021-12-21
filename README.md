@@ -11,8 +11,8 @@ This project is developed for Android Internship Assessment at Edvora
 - [Flow](https://developer.android.com/kotlin/flow) - Flow API in Kotlin is a better way to handle the stream of data asynchronously that executes sequentially.
 - [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Hilt is a dependency injection library for Android that reduces the boilerplate of doing manual dependency injection in your projec
 - [Room](https://developer.android.com/topic/libraries/architecture/room) - The Room persistence library provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.
-- [Gson](https://github.com/google/gson) - Gson is a Java library that can be used to convert Java Objects into their JSON representation
-- [Gson Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson) - A Converter which uses Gson for serialization to and from JSON.
+- [Moshi](https://github.com/square/moshi) - A modern JSON library for Kotlin and Java.
+- [Moshi Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/moshi) - A Converter which uses Moshi for serialization to and from JSON.
 - [Coil](https://coil-kt.github.io/coil/compose/) - Coil is an image loading library for Android backed by Kotlin Coroutines 
 - [Accompanist](https://github.com/google/accompanist) - Accompanist is a group of libraries that aim to supplement Jetpack Compose with features that are commonly required by developers but not yet available.
 
