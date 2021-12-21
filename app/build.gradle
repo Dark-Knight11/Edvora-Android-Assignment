@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlinx-serialization'
     id 'dagger.hilt.android.plugin'
 }
 
@@ -76,11 +75,11 @@ dependencies {
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
 
-    // Gson
-    implementation 'com.google.code.gson:gson:2.8.9'
-
+    // Moshi
+    implementation "com.squareup.moshi:moshi:1.13.0"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.13.0"
 
     // Room Abstraction for SQLite
     implementation "androidx.room:room-runtime:$roomVersion"
@@ -93,6 +92,7 @@ dependencies {
     // Coil
     implementation "io.coil-kt:coil-compose:1.4.0"
 
+    // Accompanist
     implementation "com.google.accompanist:accompanist-swiperefresh:0.21.5-rc"
 
 }

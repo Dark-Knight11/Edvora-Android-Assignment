@@ -20,7 +20,7 @@ open class BaseApiClient {
         } catch (e: Exception) {
             val errorMessage = e.message ?: e.toString()
             return if (BuildConfig.DEBUG) {
-                Resource.error("Network called failed with message $errorMessage")
+                Resource.error("Network call failed with message $errorMessage")
             } else {
                 Resource.error("Check your internet connection!")
             }
