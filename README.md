@@ -4,7 +4,7 @@ This project is developed for Android Internship Assessment at Edvora
 
 ## Built With 🛠
 
-- [Jetpack Compose](https://developer.android.com/jetpack/compose) - Jetpack Compose is Android’s modern toolkit for building native UI. It simplifies and accelerates UI development on Android. Quickly bring your app to life with less code, powerful tools, and intuitive Kotlin APIs.
+- [Jetpack Compose](https://developer.android.com/jetpack/compose) - Jetpack Compose is Android’s modern toolkit for building native UI. It simplifies and accelerates UI development on Android.
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - Coroutines is the Android team's recommended solution for asynchronous programming on Android
 - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - ViewModel is designed to store and manage UI-related data in a lifecycle conscious way which allows data to survive configuration changes such as screen rotations.
@@ -19,11 +19,10 @@ This project is developed for Android Internship Assessment at Edvora
 ## Screeshots
 
 <p float="left">
-<img src="https://user-images.githubusercontent.com/55763604/146848594-1834ff7d-5ec6-4c2a-846b-6a647d1a8333.png" width=24%>
+<img src="https://user-images.githubusercontent.com/55763604/146895556-696dbfb6-bd85-484e-8ae3-106932a413c5.png" width=24%>
 &nbsp
-<img src="https://user-images.githubusercontent.com/55763604/146848610-30047727-05a7-4acb-aee7-8ff0fc0e14f1.png" width=24%>
+<img src="https://user-images.githubusercontent.com/55763604/146895905-111ded13-522c-40b6-83c7-fe0697ec644f.png" width=24%>
 </p>
 
-
-https://user-images.githubusercontent.com/55763604/146849313-25aa178d-e8f7-42a2-87a5-af36553b64fc.mp4
+https://user-images.githubusercontent.com/55763604/146896108-37a6f09a-c341-4983-b359-bdaa3edc3a58.mp4
 
