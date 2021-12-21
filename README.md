@@ -8,7 +8,7 @@ This project is developed for Android Internship Assessment at Edvora
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - Coroutines is the Android team's recommended solution for asynchronous programming on Android
 - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - ViewModel is designed to store and manage UI-related data in a lifecycle conscious way which allows data to survive configuration changes such as screen rotations.
-- [StateFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow#stateflow) - State Flow is a state-holder observable flow that emits the current and new state updates to its collectors
+- [Flow](https://developer.android.com/kotlin/flow) - Flow API in Kotlin is a better way to handle the stream of data asynchronously that executes sequentially.
 - [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Hilt is a dependency injection library for Android that reduces the boilerplate of doing manual dependency injection in your projec
 - [Room](https://developer.android.com/topic/libraries/architecture/room) - The Room persistence library provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.
 - [Gson](https://github.com/google/gson) - Gson is a Java library that can be used to convert Java Objects into their JSON representation
