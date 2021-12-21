@@ -25,6 +25,9 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import com.example.edvora_android_assignment.common.models.Product
+import com.example.edvora_android_assignment.ui.theme.BlackBg
+import com.example.edvora_android_assignment.ui.theme.DarkGray
+import com.example.edvora_android_assignment.ui.theme.DividerColor
 import com.example.edvora_android_assignment.ui.theme.Gray
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
@@ -51,7 +54,7 @@ fun HomeScreen(viewModel: ProductViewModel = viewModel()) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Edvora") }
+                title = { Text(text = "Edvora", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 25.sp) }
             )
         }
     ) {
@@ -64,6 +67,7 @@ fun HomeScreen(viewModel: ProductViewModel = viewModel()) {
                 }
             }
         ) {
+            // if no filters active
             if (!visibility.value)
                 LandingContent(
                     states = states,
@@ -75,6 +79,7 @@ fun HomeScreen(viewModel: ProductViewModel = viewModel()) {
                     visibility = visibility,
                     viewModel = viewModel
                 )
+            // if filter applies
             else
                 FilteredData(
                     products = filteredData,
@@ -153,11 +158,14 @@ fun Category(
 fun Heading(text: String = "Shoes") {
     Text(
         text = text,
-        modifier = Modifier.padding(horizontal = 20.dp, vertical = 10.dp)
+        modifier = Modifier.padding(horizontal = 20.dp, vertical = 10.dp),
+        color = Color.White,
+        fontSize = 20.sp,
+        fontWeight = FontWeight.Bold
     )
     Divider(
         thickness = 1.dp,
-        color = Color(0xFFCBCBCB)
+        color = DividerColor
     )
 }
 
@@ -209,9 +217,13 @@ fun FilteredData(
                 visibility,
                 viewModel
             )
-            Text(text = "Clear Filter", modifier = Modifier
-                .padding(end = 20.dp)
-                .clickable { visibility.value = false })
+            Text(
+                text = "Clear Filter",
+                modifier = Modifier
+                    .padding(end = 20.dp)
+                    .clickable { visibility.value = false },
+                color = Color.White
+            )
         }
         Spacer(modifier = Modifier.height(10.dp))
         LazyColumn(
@@ -236,7 +248,7 @@ fun FilteredData(
 fun ProductCard(modifier: Modifier = Modifier, product: Product) {
     Column(
         modifier = modifier
-            .background(Color(0xFF232323))
+            .background(DarkGray)
             .padding(20.dp),
         verticalArrangement = Arrangement.spacedBy(5.dp)
     ) {
@@ -251,7 +263,7 @@ fun ProductCard(modifier: Modifier = Modifier, product: Product) {
                     modifier = modifier.size(70.dp)
                 )
                 Spacer(modifier = modifier.height(9.dp))
-                product.address?.city?.let { Text(text = it) }
+                product.address?.city?.let { Text(text = it, color = Color.White, fontSize = 13.sp) }
             }
             Spacer(modifier = modifier.width(20.dp))
             Column(
@@ -260,21 +272,24 @@ fun ProductCard(modifier: Modifier = Modifier, product: Product) {
                 Text(
                     text = product.productName,
                     fontSize = 15.sp,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
                 )
                 product.brandName?.let {
-                    Text(text = it)
+                    Text(text = it, color = Color.White, fontSize = 13.sp)
                 }
                 Text(
                     text = "$ " + product.price.toString(),
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White,
+                    fontSize = 13.sp
                 )
                 product.date?.let {
-                    Text(text = "Date: " + it.slice(0..9))
+                    Text(text = "Date: " + it.slice(0..9), color = Color.White, fontSize = 13.sp)
                 }
             }
         }
-        product.description?.let { Text(text = it) }
+        product.description?.let { Text(text = it, color = Color.White, fontSize = 13.sp) }
     }
 }
 
@@ -297,20 +312,22 @@ fun FilterProductCard(modifier: Modifier = Modifier, product: Product) {
             text = product.productName,
             fontSize = 15.sp,
             fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            color = Color.White
         )
         product.brandName?.let {
-            Text(text = it)
+            Text(text = it, color = Color.White)
         }
         Text(
             text = "$ " + product.price.toString(),
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            color = Color.White
         )
         product.date?.let {
-            Text(text = "Date: " + it.slice(0..9))
+            Text(text = "Date: " + it.slice(0..9), color = Color.White)
         }
-        product.address?.city?.let { Text(text = it) }
-        product.description?.let { Text(text = it) }
+        product.address?.city?.let { Text(text = it, color = Color.White) }
+        product.description?.let { Text(text = it, color = Color.White) }
     }
 }
 
@@ -330,7 +347,7 @@ fun Filters(
     var selectedIndex by remember { mutableStateOf(0) }
     Box(
         modifier = modifier
-            .background(Color(0xFF232323))
+            .background(DarkGray)
             .wrapContentSize(Alignment.TopStart)
             .graphicsLayer {
                 shape = RoundedCornerShape(15.dp)
@@ -343,7 +360,7 @@ fun Filters(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = "Filters")
+            Text(text = "Filters", color = Color.White, fontSize = 18.sp)
             Spacer(modifier = modifier.width(10.dp))
             Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = "DropDown")
         }
@@ -351,7 +368,7 @@ fun Filters(
     DropdownMenu(
         expanded = expanded,
         onDismissRequest = { expanded = false },
-        modifier = Modifier.background(Color(0xFF131313)),
+        modifier = Modifier.background(BlackBg),
         offset = DpOffset(20.dp, 10.dp)
     ) {
         filters.forEachIndexed { index, s ->
@@ -374,7 +391,7 @@ fun Filters(
                             selectedIndex = index
                         },
                     text = {
-                        Text(text = s)
+                        Text(text = s, color = Color.White)
                     }
                 )
             }
@@ -383,7 +400,7 @@ fun Filters(
     DropdownMenu(
         expanded = expandFilter,
         onDismissRequest = { expandFilter = false },
-        modifier = Modifier.background(Color(0xFF131313)),
+        modifier = Modifier.background(BlackBg),
         offset = DpOffset(20.dp, 5.dp)
     ) {
         when (selectedIndex) {
@@ -439,16 +456,15 @@ fun Options(
             }) {
                 Divider(
                     thickness = 1.dp,
-                    color = Color(0xFFCBCBCB)
+                    color = DividerColor
                 )
                 Text(
                     text = item,
                     modifier = Modifier.padding(15.dp),
-                    fontSize = 19.sp
+                    fontSize = 19.sp,
+                    color = Color.White
                 )
             }
         }
     }
 }
-
-
