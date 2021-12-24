@@ -9,7 +9,7 @@ This project is developed for Android Internship Assessment at Edvora
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - Coroutines is the Android team's recommended solution for asynchronous programming on Android
 - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - ViewModel is designed to store and manage UI-related data in a lifecycle conscious way which allows data to survive configuration changes such as screen rotations.
 - [Flow](https://developer.android.com/kotlin/flow) - Flow API in Kotlin is a better way to handle the stream of data asynchronously that executes sequentially.
-- [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Hilt is a dependency injection library for Android that reduces the boilerplate of doing manual dependency injection in your projec
+- [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Hilt is a dependency injection library for Android that reduces the boilerplate of doing manual dependency injection in your project
 - [Room](https://developer.android.com/topic/libraries/architecture/room) - The Room persistence library provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.
 - [Moshi](https://github.com/square/moshi) - A modern JSON library for Kotlin and Java.
 - [Moshi Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/moshi) - A Converter which uses Moshi for serialization to and from JSON.
